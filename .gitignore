@@ -1,0 +1,24 @@
+# Python virtual environment
+venv/
+__pycache__/
+
+# Environment variables
+.env
+
+# Streamlit cache
+frontend/.streamlit/
+
+# VSCode settings
+.vscode/
+
+# Byte-compiled / cache files
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# macOS / Windows junk
+.DS_Store
+Thumbs.db
