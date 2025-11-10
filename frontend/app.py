@@ -12,7 +12,7 @@ if st.button("Check"):
     if news_text.strip():
         with st.spinner("Analyzing..."):
             # Temporary backend URL (we'll replace later)
-            backend_url = "http://127.0.0.1:8000/predict"
+            backend_url = "http://backend:8000/predict"
 
             try:
                 response = requests.post(backend_url, json={"content": news_text})

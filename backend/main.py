@@ -43,7 +43,6 @@ async def predict_news(request: NewsRequest):
     prompt = f"Classify this news as FAKE or REAL:\n\n{text}\n\nAnswer only 'Fake' or 'Real'."
 
     try:
-        # Create chat completion
         response = client.chat.completions.create(
             model="llama3.1-8b",
             messages=[
@@ -51,11 +50,11 @@ async def predict_news(request: NewsRequest):
                 {"role": "user", "content": prompt}
             ],
         )
-
-        # Access the output safely
-        result = response.completion_text  # ✅ new attribute in newer SDK
+        # Correct way to get the content
+        result = response.choices[0].message.content
         return {"prediction": result}
 
     except Exception as e:
         print("🔥 Cerebras Error:", e)
         return {"prediction": f"Error connecting to Cerebras API: {e}"}
+
