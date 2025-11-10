@@ -3,7 +3,7 @@ import requests
 
 st.set_page_config(page_title="Fake News Detector", page_icon="📰")
 
-st.title("📰 Fake News Detector")
+st.title("📰 Fake News Detector with AWS Deployment")
 st.write("This app will classify the entered news as *Fake* or *Real* using the Llama model (via Cerebras).")
 
 news_text = st.text_area("Enter news article or statement:", height=200)
